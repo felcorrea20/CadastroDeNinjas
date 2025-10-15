@@ -1,3 +1,8 @@
+/*
+* Coracao da minha aplicacao spring
+* Toda vez que eu quiser rodar minha aplicacao sera nessa classe
+*/
+
 package spring.fiasco.CadastroDeNinjas;
 
 import org.springframework.boot.SpringApplication;
