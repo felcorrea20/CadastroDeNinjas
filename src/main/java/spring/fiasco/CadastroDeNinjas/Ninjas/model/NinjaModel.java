@@ -1,6 +1,7 @@
-package spring.fiasco.CadastroDeNinjas;
+package spring.fiasco.CadastroDeNinjas.Ninjas.model;
 
 import jakarta.persistence.*;
+import spring.fiasco.CadastroDeNinjas.Missoes.model.MissaoModel;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -9,9 +10,16 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
+
+    @ManyToOne
+    @JoinColumn(name = "missao_id")  // fk
+    private MissaoModel missao;
 
     public NinjaModel() {
     }
