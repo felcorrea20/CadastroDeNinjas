@@ -1,12 +1,18 @@
 package spring.fiasco.CadastroDeNinjas.Missoes.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import spring.fiasco.CadastroDeNinjas.Ninjas.model.NinjaModel;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MissaoModel {
 
     @Id
@@ -19,28 +25,4 @@ public class MissaoModel {
 
     @OneToMany(mappedBy = "missao")
     private List<NinjaModel> ninjas;
-
-    public MissaoModel() {
-    }
-
-    public MissaoModel(String nome, String dificuldade) {
-        this.nome = nome;
-        this.dificuldade = dificuldade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getDificuldade() {
-        return dificuldade;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setDificuldade(String dificuldade) {
-        this.dificuldade = dificuldade;
-    }
 }
